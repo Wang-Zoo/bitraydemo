@@ -25,6 +25,16 @@ android {
 
 }
 
+
+publish {
+    userOrg = 'wangzoo1994'                 //bintray.com用户名
+    groupId = 'com.wangzoo'             //jcenter上的路径
+    artifactId = 'bintraydemo'        //项目名称
+    publishVersion = '1.0.0'          //版本号
+    desc = '测试库'
+    website = 'https://github.com/Wang-Zoo/bitraydemo.git'
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
