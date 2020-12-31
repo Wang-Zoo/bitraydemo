@@ -1,8 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
+
+
+    lintOptions { // 新增
+        abortOnError false
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
@@ -26,20 +30,22 @@ android {
 }
 
 
-publish {
-    userOrg = 'wangzoo1994'                 //bintray.com用户名
-    groupId = 'com.wangzoo'             //jcenter上的路径
-    artifactId = 'bintraydemo'        //项目名称
-    publishVersion = '1.0.0'          //版本号
-    desc = '测试库'
-    website = 'https://github.com/Wang-Zoo/bitraydemo.git'
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'androidx.appcompat:appcompat:1.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+publish {
+    repoName = 'maven'
+    userOrg = 'wangzoo1994'           //bintray.com用户名
+    groupId = 'com.wangzoo'           //jcenter上的路径
+    artifactId = 'bitratdemo'        //项目名称
+    publishVersion = '1.0.1'          //版本号
+    desc = '测试库'
+    website = 'https://github.com/Wang-Zoo/bitraydemo.git'
 }
