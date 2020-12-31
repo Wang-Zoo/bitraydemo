@@ -1,0 +1,3 @@
+rootProject.name='bintarydemo'
+include ':app'
+include ':testmodule'
